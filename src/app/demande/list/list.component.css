@@ -1,0 +1,98 @@
+body,html{
+  overflow: hidden;
+}
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
+.demo-section + .demo-section {
+  margin-top: 16px; }
+::ng-deep app-list{
+  height: 100%;
+  display: block;
+  background: url("../../../assets/images/fond.jpg") no-repeat center;
+  background-size: cover;
+  overflow: auto;
+}
+::ng-deep app-root,
+::ng-deep app-homepage {
+  height: 100%;
+  display: block; }
+
+.wrap-sidebar-nav {
+  display: flex;
+  height: 100%;
+  width: 100%; }
+.bg-white{
+  background-color: #fff!important;
+}
+
+.wrap-sidebar-nav .sidebare-page {
+  width: 100%;
+ }
+
+.avatar .img {
+  width: 52px;
+  height: 52px;
+  overflow: hidden;
+  border-radius: 80px; }
+.avatar .img img {
+  width: 100%; }
+
+
+::ng-deep .sidebare-page .content-page-sidebare {
+  padding: 1rem; }
+
+
+
+
+
+.w-100 {
+  width: 100% !important; }
+
+::ng-deep .nav-menu .mdc-list-item__primary-text {
+  color: #000 !important;
+  cursor: pointer; }
+
+/*# sourceMappingURL=homepage.component.css.map */
+
+
+/*Drag and drop*/
+
+
+.example-list {
+  border: solid 1px #ccc;
+  min-height: 200px;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  display: block;
+}
+
+.example-box {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+.new-demande{
+  max-width: 40%;
+  width: 100%;
+}
+
+.new-demande h1{
+  color: #ffffff;
+  font-size: 45px;
+}
+.new-demande p{
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.example-viewport {
+  height: 1000px !important;
+  width: 100% !important;
+}

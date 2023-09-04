@@ -1,0 +1,59 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
+
+
+
+body,html{
+  overflow: hidden;
+  height: 100%;
+}
+::ng-deep app-information{
+  height: 100%;
+  display: block;
+  background: url("../../assets/images/fond.jpg") no-repeat center;
+  background-size: cover;
+  overflow: auto;
+
+}
+.wrap-sidebar-nav .sidebare-page,
+.wrap-sidebar-nav{
+  width: 100%; }
+
+.wrap-sidebar-nav .sidebare-page .toolbar .btn-default {
+  height: 53px;
+  background: #5c8eff; }
+
+.avatar .img {
+  width: 52px;
+  height: 52px;
+  overflow: hidden;
+  border-radius: 80px; }
+.avatar .img img {
+  width: 100%; }
+
+::ng-deep .information .horaire{
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 25px;
+}
+
+
+::ng-deep .sidebare-page .content-page-sidebare {
+  padding: 1rem;
+}
+
+
+.w-100 {
+  width: 100% !important; }
+
+
+.example-box {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+
+
+
+

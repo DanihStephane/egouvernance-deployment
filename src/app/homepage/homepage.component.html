@@ -1,0 +1,94 @@
+<div class="wrap-sidebar-nav">
+  <div class="sidebare-page">
+    <div class="toolbar">
+      <div class="nav-menu ">
+        <div class="logo">
+          <img src="../../assets/images/commune.png" alt="">
+          <span class="text-white">e-gouvernance</span>
+        </div>
+        <div class="avatar d-flex align-items-start ">
+          <div class="d-flex align-items-center gap-4">
+            <div class="img">
+              <img src="../../assets/images/profile.jpg" alt="">
+            </div>
+            <div>
+              <button mat-button [matMenuTriggerFor]="menu">{{ userName }}</button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">
+                  <span class="d-flex align-items-center justify-content-center">
+                     Déconnexion
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="ms-1"
+                         viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                      <path fill-rule="evenodd"
+                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                    </svg>
+                  </span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <mat-list role="list" class="d-flex list-menu">
+        <mat-list-item role="listitem" class="text-black" (click)="homePage()">
+          <div class="d-flex align-items-center gap-4 actus">
+
+
+            Actualités
+          </div>
+        </mat-list-item>
+        <mat-list-item role="listitem" class="text-black" (click)="demande()">
+          <div class="d-flex align-items-center gap-4 demande">
+
+            Demandes
+          </div>
+        </mat-list-item>
+        <mat-list-item role="listitem" class="text-black" (click)="information()">
+          <div class="d-flex align-items-center gap-4 info">
+
+            Informations
+          </div>
+        </mat-list-item>
+      </mat-list>
+    </div>
+    <div class="search-block">
+      <div class="container">
+        <h2>Liste des actualités</h2>
+        <form class="search-form">
+          <mat-form-field class="example-full-width">
+            <span class="ico search"></span>
+            <mat-label>Search...</mat-label>
+            <input type="search" matInput placeholder="Text" value="">
+          </mat-form-field>
+        </form>
+      </div>
+    </div>
+    <div class="content-page-sidebare">
+
+        <cdk-virtual-scroll-viewport itemSize="5" #scroller style="margin: auto;" class="example-viewport">
+            <div *ngFor="let item of news">
+              <div class="article mb-4" style="margin-right: 20px">
+                <div class="img">
+                  <img src="../../assets/images/article.jpg" alt="">
+                </div>
+                <div class="content">
+                  <p class="mb-0 d-flex justify-content-between">
+                    <span class="label">Publication</span>
+                    <span class="date">Posté le {{item.creationDateTime}}</span>
+                  </p>
+                  <h3>{{ item.title }}</h3>
+                  <p><i>
+                    L'objectif est de tenir les lecteurs au courant et de leur fournir
+                    des informations essentielles pour comprendre les développements récents
+                  </i> {{ item.description }}</p>
+                </div>
+              </div>
+            </div>
+        </cdk-virtual-scroll-viewport>
+    </div>
+  </div>
+</div>

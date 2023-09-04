@@ -1,0 +1,91 @@
+
+::ng-deep .btn-lg svg{
+  width: 20px;
+  height: 20px;
+}
+
+::ng-deep .btn-sm{
+  padding: 5px 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 25px;
+}
+::ng-deep .btn-sm svg{
+  width: 20px;
+  height: 20px;
+}
+
+::ng-deep .mat-mdc-raised-button:not(:disabled){
+  background-color: #564474!important;
+}
+::ng-deep h1,::ng-deep h2{
+  text-align: center;
+  font-weight: bold!important;
+  font-size: 36px!important;
+}
+::ng-deep .align-items-center{
+  align-items: center!important;
+}
+::ng-deep .align-items-start{
+  align-items: start!important;
+}
+::ng-deep .align-items-end{
+  align-items: end!important;
+}
+::ng-deep .justify-content-end{
+  justify-content: end!important;
+}
+::ng-deep .justify-content-start{
+  justify-content: start!important;
+}
+::ng-deep .justify-content-center{
+  justify-content: center!important;
+}
+::ng-deep .justify-content-between{
+  justify-content: space-between!important;
+}
+::ng-deep mat-form-field .mat-mdc-text-field-wrapper {
+  background-color: #cccccc!important;
+}
+::ng-deep .d-flex{
+  display: flex!important;
+}
+::ng-deep .d-table{
+  display: table!important;
+}
+::ng-deep .d-block{
+  display: block!important;
+}
+::ng-deep .d-none{
+  display: none!important;
+}
+::ng-deep .red{
+  background-color: red;
+}
+::ng-deep .flex-row{
+  flex-direction: row!important;
+}
+::ng-deep .flex-row-revers{
+  flex-direction: row-reverse!important;
+}
+::ng-deep .flex-column-revers{
+  flex-direction: column-reverse!important;
+}
+::ng-deep .flex-column{
+  flex-direction: column!important;
+}
+::ng-deep .gap-4{
+  gap: 1rem!important;
+}
+::ng-deep .p-0{
+  padding: 0!important;
+}
+::ng-deep .p-4{
+  padding: 1rem!important;
+}
+::ng-deep .px-4{
+  padding: 0 1rem!important;
+}
+::ng-deep .py-4{
+  padding: 1rem 0!important;
+}

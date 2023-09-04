@@ -1,0 +1,98 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.demo-section + .demo-section {
+  margin-top: 16px;
+}
+::ng-deep{
+  app-root,
+  app-homepage{
+    height: 100%;
+    display: block;
+  }
+}
+
+
+
+
+
+.wrap-sidebar-nav{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  .sidebare{
+    width: 250px;
+    background-color: #fff;
+    box-shadow: 3px 0px 5px #e9e9e9 !important;
+    position: absolute;
+    height: 100%;
+    padding: 1.5rem 0;
+    .avatar{
+      margin-bottom: 3rem;
+    }
+
+  }
+  .sidebare-page{
+    width: 100%;
+    background-color: #f3f3f3;
+    padding-left: 250px;
+
+    .toolbar{
+      background-color: #fff;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+      padding: 1rem 1.5rem 0rem;
+
+      .btn-default{
+        height: 53px;
+        background: #5c8eff;
+      }
+    }
+  }
+}
+.avatar{
+  .img{
+    width: 52px;
+    height: 52px;
+    overflow: hidden;
+    border-radius: 80px;
+    img{
+      width: 100%;
+    }
+  }
+}
+.sidebare{
+  .img{
+    width: 55px;
+    height: 55px;
+    border-radius: 0;
+  }
+}
+.form-toolbare {
+  align-items: start;
+  .mdc-text-field--filled {
+    height: 48px!important;
+  }
+}
+.sidebare-page{
+  .content-page-sidebare{
+    padding: 1rem;
+    .mat-mdc-card {
+      position: relative;
+      width: 100%;
+    }
+  }
+}
+.bg-white{
+  background-color: #ffffff!important;
+}
+::ng-deep .nav-menu{
+  .mdc-list-item__primary-text{
+    color: #000!important;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,135 @@
+
+::ng-deep  .content{
+  padding: 10px 15px 10px 0;
+
+}
+::ng-deep  .article h3{
+
+  font-weight: 700;
+  font-size: 25px;
+
+
+}
+::ng-deep  .article span{
+  padding: 0;
+  margin-bottom: 10px;
+}
+::ng-deep  .article .label{
+
+  color: #4caf50;
+  border: none;
+}
+::ng-deep  .article .date{
+  border: none;
+  color: #9f9f9f;
+
+}
+::ng-deep  .article .img{
+  max-width: 220px;
+}
+::ng-deep  .article .img img{
+  width: 100%;
+}
+::ng-deep .search-block{
+  background-color: #03206e;
+  padding: 1rem;
+}
+::ng-deep .container{
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+}
+::ng-deep .search-block .container{
+  display: flex;
+  max-width: 1200px;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+::ng-deep .search-block .container h2{
+  color: #fff;
+  margin-bottom: 0;
+}
+::ng-deep .search-block .search-form{
+  max-width: 245px;
+  width: 100%;
+}
+::ng-deep .search-block mat-form-field{
+  width: 100%;
+}
+::ng-deep .search-block .mat-mdc-text-field-wrapper{
+  padding: 0 45px 0 15px;
+  border-radius: 25px;
+}
+::ng-deep .search-block .container .mat-mdc-form-field-subscript-wrapper{
+  position: absolute;
+  z-index: -999;
+  width: 1px;
+}
+::ng-deep mat-form-field .ico.search{
+  background: #e6e6e6 url("../assets/images/search.svg") no-repeat center;
+  background-size: 20px;
+  left: unset;
+  right: -45px;
+}
+
+::ng-deep .list-menu .mdc-list-item__primary-text{
+  position: relative;
+  font-size: 28px;
+  font-weight: 500;
+  cursor: pointer;
+}
+::ng-deep .actus:before{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../assets/images/actualite.png") no-repeat center;
+  background-size: contain;
+}
+::ng-deep .demande{
+  justify-content: center;
+}
+::ng-deep .info{
+  justify-content: end;
+}
+::ng-deep .demande:before{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../assets/images/demande.png") no-repeat center;
+  background-size: contain;
+}
+::ng-deep .info:before{
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  background: url("../assets/images/info.svg") no-repeat center;
+  background-size: contain;
+}
+::ng-deep .content-page-sidebare{
+  padding: 3rem 1rem!important;
+}
+::ng-deep .card{
+  display: flex;
+  gap: 1rem;
+  border-radius: 15px;
+}
+::ng-deep .card .card-content{
+  padding: 25px 15px 15px;
+  position: relative;
+}
+::ng-deep .btn.btn-status{
+  position: absolute;
+  top: -23px;
+  right: 0;
+  font-weight: 400;
+  padding: 10px 20px;
+  display: flex;
+  gap: 0.6rem;
+}
+::ng-deep .card .date{
+  color: #9f9f9f;
+}

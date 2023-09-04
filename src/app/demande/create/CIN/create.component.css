@@ -1,0 +1,56 @@
+:host {
+  display: block;
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  animation: custom-dialog-enter 1s ease;
+}
+
+
+/*Stepper*/
+
+.mat-mdc-form-field {
+  margin-top: 16px;
+}
+::ng-deep .mat-stepper-horizontal,
+::ng-deep .mat-stepper-vertical{
+  background-color: #ffffff;
+  border: 1px #e7e7e7 solid;
+  border-radius: 15px;
+  overflow: hidden;
+}
+::ng-deep .mat-horizontal-stepper-header-container{
+  background-color: #fbfbfb;
+}
+::ng-deep .ng-trigger{
+  background-color: unset!important;
+}
+::ng-deep .mat-step-text-label,
+::ng-deep .mat-mdc-input-element{
+  color: #333!important;
+  font-weight: 500;
+  font-size: 15px;
+}
+::ng-deep .mat-mdc-input-element::placeholder{
+  color: #333;
+}
+::ng-deep .mat-step-header .mat-step-icon {
+  background-color: #5c5c5cb3;
+  color: #fff;
+}
+::ng-deep .mat-step-header .mat-step-icon-selected,
+::ng-deep .mat-step-header .mat-step-icon-state-done,
+::ng-deep .mat-step-header .mat-step-icon-state-edit {
+  background-color: #c2185b;
+  color: #fff;
+}
+::ng-deep .mat-mdc-button{
+  color: #333 !important;
+  border: 1px #333 solid;
+  background-color: #fff;
+  display: inline-block;
+}
+::ng-deep .mdc-button__label{
+  display: flex;
+  gap: .5rem;
+}

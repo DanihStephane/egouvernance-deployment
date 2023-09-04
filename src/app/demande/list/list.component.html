@@ -1,0 +1,199 @@
+<div class="wrap-sidebar-nav">
+
+  <div class="sidebare-page">
+    <div class="toolbar">
+      <div class="nav-menu ">
+        <div class="logo">
+          <img src="../../assets/images/commune.png" alt="">
+          <span class="text-white">e-gouvernance</span>
+        </div>
+        <div class="avatar d-flex align-items-start ">
+          <div class="d-flex align-items-center gap-4">
+            <div class="img">
+              <img src="../../assets/images/profile.jpg" alt="">
+            </div>
+            <div>
+              <button mat-button [matMenuTriggerFor]="menu">{{ userName }}</button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="logout()">
+                  <span class="d-flex align-items-center justify-content-center">
+                     Déconnexion
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="ms-1"
+                         viewBox="0 0 16 16">
+                      <path fill-rule="evenodd"
+                            d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
+                      <path fill-rule="evenodd"
+                            d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                    </svg>
+                  </span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+        </div>
+      </div>
+      <mat-list role="list" class="list-menu d-flex">
+        <mat-list-item role="listitem" class="text-black" (click)="homePage()">
+          <div class="d-flex align-items-center gap-4 actus">
+            Actualités
+          </div>
+        </mat-list-item>
+        <mat-list-item role="listitem" class="text-black" (click)="demande()">
+          <div class="d-flex align-items-center gap-4 demande">
+
+            Demandes
+          </div>
+        </mat-list-item>
+        <mat-list-item role="listitem" class="text-black" (click)="information()">
+          <div class="d-flex align-items-center gap-4 info">
+            Informations
+          </div>
+        </mat-list-item>
+      </mat-list>
+
+    </div>
+
+    <div class="search-block">
+      <div class="container">
+        <h2>Liste des demandes</h2>
+        <div class="search-form">
+          <mat-form-field class="example-full-width">
+            <span class="ico search"></span>
+            <mat-label>Recherche de Motif...</mat-label>
+            <input type="search" matInput placeholder="Text" value="" [(ngModel)]="searchQuery" (ngModelChange)="performSearch()">
+          </mat-form-field>
+        </div>
+      </div>
+    </div>
+    <div class="content-page-sidebare">
+      <div class="container">
+      <div cdkDropListGroup class="d-flex gap-4 justify-content-between colum-mobile">
+         <div class="new-demande">
+           <h1 class="text-start">Nouvelles demandes</h1>
+           <p class="mb-4">La création de demande administrative représente une solution pratique
+             our formuler des demandes à votre commune sans avoir à vous déplacer ;
+             il vous suffit simplement d'attendre la validation.!</p>
+           <button class="btn btn-default btn-white btn-lg" (click)="create()"> Créer
+             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="ms-1" viewBox="0 0 16 16">
+               <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+               <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+             </svg>
+           </button>
+         </div>
+
+
+        <div class="liste-card d-flex flex-column">
+
+          <div class="card bg-white" style="height: 50px">
+            <div class="card-img">
+              <h4 style="margin-top: 20px">Vos demandes</h4>
+              <div class="img">
+                <img mat-card-image src="" alt="">
+              </div>
+              <p>_________________________________________</p>
+            </div>
+            <div class="card-content">
+              <p class="mb-0 text-end date">Date du jour : {{ today }}</p>
+              <ul>
+                <span>_______________________________________________________________</span>
+              </ul>
+              <div class="groupe-btn">
+              </div>
+            </div>
+          </div>
+
+          <cdk-virtual-scroll-viewport itemSize="5" #scroller style="margin: auto;" class="example-viewport">
+            <div *ngFor="let item of demandes">
+              <div class="card bg-white" style="margin-top: 50px; margin-right: 20px">
+                <div class="card-img">
+                  <h4>{{ item.requestType.label }}</h4>
+                  <div class="img">
+                    <img mat-card-image src="{{ item.illustration }}" alt="illustration">
+                  </div>
+                  <p> Un de vos requete auprès de votre commune </p>
+                </div>
+                <div class="card-content">
+                  <div class="{{ (item.requestStatus.code === 'REFUSED') || (item.requestStatus.code === 'CANCELED') ? '' : 'd-none' }}">
+                    <button class="btn btn-default btn-default btn-sm btn-status btn-rejet">{{ item.requestStatus.label }}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-emoji-frown" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M4.285 12.433a.5.5 0 0 0 .683-.183A3.498 3.498 0 0 1 8 10.5c1.295 0 2.426.703 3.032 1.75a.5.5 0 0 0 .866-.5A4.498 4.498 0 0 0 8 9.5a4.5 4.5 0 0 0-3.898 2.25.5.5 0 0 0 .183.683zM7 6.5C7 7.328 6.552 8 6 8s-1-.672-1-1.5S5.448 5 6 5s1 .672 1 1.5zm4 0c0 .828-.448 1.5-1 1.5s-1-.672-1-1.5S9.448 5 10 5s1 .672 1 1.5z"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="{{ item.requestStatus.code === 'VALIDATED' ? '' : 'd-none' }}">
+                    <button class="btn btn-default btn-default btn-sm btn-status btn-complete">{{ item.requestStatus.label }}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check-circle" viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                        <path d="M10.97 4.97a.235.235 0 0 0-.02.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-1.071-1.05z"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="{{ item.requestStatus.code === 'INITIATED' ? '' : 'd-none' }}">
+                    <button class="btn btn-default btn-load btn-sm btn-status">{{ item.requestStatus.label }}
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-hourglass-split" viewBox="0 0 16 16">
+                        <path d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z"/>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="{{ item.requestStatus.code === 'COMPLETED' ? '' : 'd-none' }}">
+                    <button class="btn btn-default btn-default btn-sm btn-status btn-complete">{{ item.requestStatus.label }}
+                      <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil025.svg-->
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path opacity="0.3" d="M14 2H6C4.89543 2 4 2.89543 4 4V20C4 21.1046 4.89543 22 6 22H18C19.1046 22 20 21.1046 20 20V8L14 2Z" fill="white"/>
+                      <path d="M20 8L14 2V6C14 7.10457 14.8954 8 16 8H20Z" fill="white"/>
+                      <path d="M10.3629 14.0084L8.92108 12.6429C8.57518 12.3153 8.03352 12.3153 7.68761 12.6429C7.31405 12.9967 7.31405 13.5915 7.68761 13.9453L10.2254 16.3488C10.6111 16.714 11.215 16.714 11.6007 16.3488L16.3124 11.8865C16.6859 11.5327 16.6859 10.9379 16.3124 10.5841C15.9665 10.2565 15.4248 10.2565 15.0789 10.5841L11.4631 14.0084C11.1546 14.3006 10.6715 14.3006 10.3629 14.0084Z" fill="white"/>
+                      </svg></span>
+                      <!--end::Svg Icon-->
+                    </button>
+                  </div>
+                  <div class="{{ item.requestStatus.code === 'CONTROLLED' ? '' : 'd-none' }}">
+                    <button class="btn btn-default btn-load btn-sm btn-status">{{ item.requestStatus.label }}
+                      <!--begin::Svg Icon | path: assets/media/icons/duotune/coding/cod002.svg-->
+                      <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path opacity="0.3" d="M18 22C19.7 22 21 20.7 21 19C21 18.5 20.9 18.1 20.7 17.7L15.3 6.30005C15.1 5.90005 15 5.5 15 5C15 3.3 16.3 2 18 2H6C4.3 2 3 3.3 3 5C3 5.5 3.1 5.90005 3.3 6.30005L8.7 17.7C8.9 18.1 9 18.5 9 19C9 20.7 7.7 22 6 22H18Z" fill="white"/>
+                      <path d="M18 2C19.7 2 21 3.3 21 5H9C9 3.3 7.7 2 6 2H18Z" fill="white"/>
+                      <path d="M9 19C9 20.7 7.7 22 6 22C4.3 22 3 20.7 3 19H9Z" fill="white"/>
+                      </svg></span>
+                      <!--end::Svg Icon-->
+                    </button>
+                  </div>
+                  <p class="mb-0 text-end date">{{ item.requestDate }}</p>
+                  <ul>
+                    <li>Nom : <span>{{ item.requestInfoResponse.lastName }}</span></li>
+                    <li>Prénom : <span>{{ item.requestInfoResponse.firstName }}</span></li>
+                    <li>Adresse : <span>{{ item.requestInfoResponse.address }}</span></li>
+                    <li>Motif : <span>{{ item.reason }}</span></li>
+                  </ul>
+                  <div class="groupe-btn">
+                    <button class="btn btn-default btn-white btn-sm" (click)="viewDetails(item.id)">Voir
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="ms-1" viewBox="0 0 16 16">
+                        <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8zM1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"/>
+                        <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0z"/>
+                      </svg>
+                    </button>
+                    <button class="btn btn-default btn-white btn-sm" (click)="gererateCodeQr(item.id)">Code QR
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="ms-1" viewBox="0 0 16 16">
+                        <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                        <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z" fill="#564474"/>
+                      </svg>
+                    </button>
+                    <button class="btn btn-default btn-white btn-sm" (click)="deleteRequest(item.id)">Annuler
+                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="ms-1" viewBox="0 0 16 16">
+                        <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5Zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6Z"/>
+                        <path d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1ZM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118ZM2.5 3h11V2h-11v1Z"/>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </cdk-virtual-scroll-viewport>
+
+
+        </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,108 @@
+::ng-deep html, body {
+  height: 100%;
+}
+::ng-deep mat-form-field .ico.passe{
+  background: #e6e6e6 url("../assets/images/locks.svg") no-repeat center;
+  background-size: contain;
+}
+::ng-deep mat-form-field .ico{
+  display: block;
+  width: 45px;
+  height: 100%;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  left: -49px;
+}
+::ng-deep mat-form-field .ico.user{
+  background: #e6e6e6 url("../assets/images/utilisateur.svg") no-repeat center;
+  background-size: 25px;
+}
+::ng-deep mat-form-field .ico.mail{
+  background: #e6e6e6 url("../assets/images/email.svg") no-repeat center;
+  background-size: 17px;
+}
+::ng-deep mat-form-field .ico.phone{
+  background: #e6e6e6 url("../assets/images/phone.svg") no-repeat center;
+  background-size: 17px;
+}
+::ng-deep mat-form-field .ico.pin{
+  background: #e6e6e6 url("../assets/images/pin.svg") no-repeat center;
+  background-size: 17px;
+}
+::ng-deep .mat-mdc-form-field-icon-suffix{
+  position: absolute!important;
+  left: 0;
+  background: #e6e6e6;
+  width: 40px;
+}
+::ng-deep .mat-mdc-form-field-icon-suffix .mat-mdc-icon-button{
+  padding-left: 0;
+}
+::ng-deep .mat-mdc-form-field-icon-suffix .mat-mdc-icon-button svg{
+  fill: #545454!important;
+}
+::ng-deep .form-content{
+  background-color: #fff;
+  max-width: 300px;
+  width: 100%;
+  padding: 25px;
+  border-radius: 35px;
+}
+::ng-deep .form-content mat-form-field .mat-mdc-text-field-wrapper{
+  padding-left: 3rem;
+}
+::ng-deep .ng-trigger{
+  background-color: #fff!important;
+  color: black;
+
+}
+::ng-deep .ng-trigger mat-option span{
+  color: #000000;
+
+}
+::ng-deep .ms-1{
+  margin-left: 10px;
+}
+::ng-deep .me-1{
+  margin-right: 10px;
+}
+::ng-deep .btn-default{
+  padding: 6px 15px;
+  text-align: center;
+  background: #564474;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 500;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border:none;
+}
+::ng-deep .btn-status.btn-load{
+  background: #564474;
+}
+::ng-deep .btn-status.btn-complete{
+  background: #5aa700;
+}
+::ng-deep .btn-status.btn-completed{
+  background: #2e75bb;
+}
+::ng-deep .btn-status.btn-controlled{
+  background: #dcd95e;
+}
+::ng-deep .btn-status.btn-rejet{
+  background: #ff3d00;
+}
+::ng-deep .btn-white{
+  background-color: #fff;
+  color: #564474;
+  border: 2px #564474 solid;
+}
+::ng-deep .btn-lg{
+  padding: 11px 25px;
+  font-size: 1.5rem;
+  font-weight: 700;
+  border-radius: 25px;
+}

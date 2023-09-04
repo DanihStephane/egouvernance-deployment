@@ -1,0 +1,70 @@
+.register-form{
+  width: 100%;
+  justify-content: space-around;
+  overflow: auto;
+}
+::ng-deep app-root,
+::ng-deep app-signin{
+  height: 100%;
+  display: block;
+}
+body,html{
+  overflow: hidden;
+}
+::ng-deep app-signup{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f3f3f3;
+  justify-content: center;
+  background: url("../../assets/images/fond.jpg") no-repeat center;
+  background-size: cover;
+}
+::ng-deep .form-content .profile{
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+  border-radius: 150px;
+  margin-top: -75px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 10px #fff solid;
+}
+::ng-deep .form-content .profile img{
+  width: 105px;
+  max-height: 105px;
+}
+::ng-deep .register-form{
+  overflow: visible!important;
+}
+
+::ng-deep .register-form .logo{
+  width: 100%;
+  max-width: 430px;
+}
+::ng-deep .register-form .logo img{
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .register-form .logo{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 64px;
+  }
+  .register-form{
+    flex-direction: column;
+    gap: 0px!important;
+    align-items: center;
+  }
+  .register-form .logo img{
+    max-width: 155px;
+    width: 100%;
+    height: auto;
+  }
+  ::ng-deep app-signup{
+    min-height: 116vh;
+    overflow: auto;
+  }
+}

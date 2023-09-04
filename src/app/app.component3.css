@@ -1,0 +1,132 @@
+
+::ng-deep .mdc-text-field--filled .mdc-floating-label{
+  top: 20px!important;
+}
+::ng-deep .mat-mdc-text-field-wrapper{
+  height: 40px;
+}
+::ng-deep .toolbar .logo{
+  display: flex;
+  align-items: center;
+}
+::ng-deep .toolbar .logo span{
+  font-size: 28px;
+  font-weight: 500;
+}
+::ng-deep .toolbar .logo img{
+  max-height: 110px;
+}
+
+/*Menu*/
+::ng-deep .wrap-sidebar-nav,
+::ng-deep .wrap-sidebar-nav .sidebare-page{
+  height: 100%;
+}
+::ng-deep .wrap-sidebar-nav .sidebare-page .toolbar {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.5rem 0rem; }
+::ng-deep .nav-menu{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  border-bottom: 1px #fff solid;
+  padding-bottom: 15px;
+}
+::ng-deep .nav-menu .logo{padding-left: 15px}
+::ng-deep .nav-menu .avatar{padding-right: 15px}
+::ng-deep .nav-menu .avatar p {
+  color: #fff;
+  font-size: 28px;
+  font-weight: 500;
+}
+::ng-deep .wrap-sidebar-nav .sidebare-page .toolbar .list-menu{
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
+
+}
+::ng-deep .text-white{
+  color: #fff!important;
+}
+::ng-deep  .article{
+  display: flex;
+  gap: 2rem;
+  background: #fff;
+  padding: 10px;
+  border-radius: 15px;
+
+}
+
+::ng-deep .card .card-content ul{
+  padding: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+::ng-deep .liste-card{
+  gap: 35px;
+}
+::ng-deep .card .card-content ul li{
+  color: #000;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+  line-height: 100%;
+}
+::ng-deep .groupe-btn {
+  display: flex;
+  gap: 10px;
+  flex-flow: row wrap;
+}
+::ng-deep .card .card-content ul li>span{
+  color: #3d3d3d;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+}
+::ng-deep .card .card-img{
+  width: 100%;
+  max-width: 230px;
+  border: 2px #ccc dashed;
+  padding: 10px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+::ng-deep .card .card-img p{
+  font-size: 12px;
+  color: #ccc;
+  font-weight: 400;
+  margin: 0;
+  line-height: 100%;
+}
+::ng-deep .card .card-img .img{
+  width: 100%;
+  height: 150px;
+  display: block;
+  background: #ccc;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+::ng-deep .card h4{
+  text-align: center;
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 0;
+  padding: 10px;
+}
+::ng-deep .card .card-img img{
+  width: 100%;
+}
+::ng-deep .liste-card-creat .card .card-img{
+  box-sizing: border-box;
+  max-width: 330px;
+}
+::ng-deep .liste-card-creat .card{
+  padding: 15px;
+  border: 4px #fff solid;
+}
